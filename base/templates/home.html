@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <center>
+        <h1>HOME PAGE</h1>
+        {% if no_match %}
+           <h1>No product Found.....</h1>
+        {% endif %}
+        {% for i in category %}
+        <form action="">
+            <input type="submit" value="{{i}}" name="category">
+        </form>
+        {% endfor %}
+        {% for i in data %}
+           {% if trend %}
+             <h1>Trending...!</h1>
+           {% endif %}
+           {% if offer %} 
+              <h1>50% OFF!..</h1>
+           {% endif %}
+           <img src="{{i.pimage.url}}" alt="">
+           <p>{{i.pname}} // {{i.pdesc}} // {{i.price}}</p>
+           <a href="{% url 'addtocart' i.id %}">ADD TO CART</a> <br>
+        {% endfor %}
+    </center>
+{% endblock %}

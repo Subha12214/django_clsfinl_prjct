@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+   <center>
+      <h1>LOGIN PAGE</h1>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Enter the username:</label>
+        <input type="text" name="username" id="">
+        <br><br>
+        <label for="">Enter the password:</label>
+        <input type="password" name="password" id="">
+        <br><br>
+        <button type="submit">SUBMIT</button>
+        <br><br>
+        <a href="{% url 'register' %}">SING UP</a>
+        <br>
+        <a href="{% url 'forgot' %}">FORGOT PASSWORD</a>
+      </form>
+   </center>
+{% endblock %}

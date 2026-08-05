@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <center>
+    <h1>UPADTE PROFILE</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Username:</label>
+        <input type="text" name="username" id="" disabled value="{{request.user.username}}">
+        <br><br>
+        <label for="">First Name:</label>
+        <input type="text" name="fname" id="" value="{{request.user.first_name}}">
+        <br><br>
+        <label for="">Last Name:</label>
+        <input type="text" name="lname" id="" value="{{request.user.last_name}}">
+        <br><br>
+        <label for="">Email:</label>
+        <input type="text" name="email" id="" value="{{request.user.email}}">
+        <br><br>
+        <button type="submit">SUBMIT</button>
+    </form>
+  </center>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <center>
+        {{msg}}
+       <h1>FROGOT PASSWORD</h1>
+       <form action="" method="POST">
+          {% csrf_token %}
+           <label for="">Enter the username:</label>
+           <input type="text" name="uname" id="">
+           <br><br>
+           <button type="submit">SUBMIT</button>
+       </form>
+    </center>
+{% endblock %}

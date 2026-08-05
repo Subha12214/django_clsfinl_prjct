@@ -1,0 +1,44 @@
+<nav>
+    <div class="logo">
+        <h1>ShopSphere</h1>
+    </div>
+    <div class="links">
+    {% if request.user.is_authenticated %}
+      {% if search %}
+      <form action="">
+          <input type="text" name="search" id="">
+          <button type="submit">Search</button>
+      </form>
+      <form action="">
+        <input type="submit" value="trending" name="trending">
+      </form>
+      <form action="">
+        <input type="submit" value="offer" name="offer">
+      </form>
+      {% endif %}
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'cart' %}">CART({{cartproduct_count}})</a>
+        <a href="{% url 'profile' %}">PROFILE</a>
+        <a href="{% url 'logout_' %}">LOGOUT</a>
+        <a href="">HELP</a>
+         <a href="">ABOUT</a>
+    {% else %}
+      {% if search %}
+        <form action="">
+          <input type="text" name="search" id="">
+          <button type="submit">Search</button>
+        </form>
+        <form action="">
+            <input type="submit" value="trending" name="trending">
+        </form>
+        <form action="">
+            <input type="submit" value="offer" name="offer">
+        </form>
+       {% endif %} 
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'login_' %}">LOGIN</a>
+        <a href="">HELP</a>
+        <a href="">ABOUT</a>
+    {% endif %}
+    </div>
+</nav>

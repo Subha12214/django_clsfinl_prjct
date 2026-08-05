@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h1>NEW PASSWORD PAGE</h1>
+    {{msg}}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Enter the new password</label>
+        <input type="password" name="new_pass" id="">
+        <br><br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</center>
+{% endblock %}
